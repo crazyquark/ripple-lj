@@ -1,4 +1,4 @@
-package com.cegeka.ripple_lj;
+package com.ripple.test;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
