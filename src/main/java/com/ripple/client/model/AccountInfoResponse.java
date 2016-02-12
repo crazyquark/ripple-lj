@@ -1,6 +1,7 @@
 package com.ripple.client.model;
 
 import lombok.Data;
+import lombok.ToString;
 
 /**
  * A POJO to map to an account_info request
@@ -20,6 +21,7 @@ import lombok.Data;
  */
 @Data
 public class AccountInfoResponse {
+	@ToString
 	public final class AccountData {
 		public String Account;
 		public String Balance;

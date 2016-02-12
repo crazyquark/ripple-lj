@@ -6,6 +6,7 @@ import java.net.URL;
 import com.googlecode.jsonrpc4j.JsonRpcHttpClient;
 import com.googlecode.jsonrpc4j.ProxyUtil;
 import com.ripple.client.model.AccountInfoRequest;
+import com.ripple.client.model.AccountInfoResponse.AccountData;
 
 /**
  * The main entrypoint to use ripple via RPC
@@ -38,8 +39,8 @@ public class RippleClient {
 	}
 	
 	// TODO: this should return an object
-	public String getRootAccount() {
-		return this.rippleService.account_info(new AccountInfoRequest(rootAccount)).toString();
+	public AccountData getRootAccount() {
+		return this.rippleService.account_info(new AccountInfoRequest(rootAccount)).getAccount_data();
 	}
 	
 //	public String getRootAccount() {
