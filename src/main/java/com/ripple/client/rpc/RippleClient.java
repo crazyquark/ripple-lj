@@ -31,6 +31,7 @@ public class RippleClient {
 		this("localhost", 5005);
 	}
 	
+	// TODO: this should return an object
 	public String getRootAccount() {
 		return this.rippleService.account_info(new AccountInfoRequest()).toString();
 	}
