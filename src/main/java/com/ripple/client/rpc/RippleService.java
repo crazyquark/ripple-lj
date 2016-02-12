@@ -32,5 +32,5 @@ public interface RippleService {
 	public LinkedHashMap<String, Object> account_tx(AccountTxRequest params);
 	
 	// Server
-	public String server_info();
+	public LinkedHashMap<String, Object> server_info();
 }

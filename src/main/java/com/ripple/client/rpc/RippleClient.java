@@ -2,6 +2,7 @@ package com.ripple.client.rpc;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.LinkedHashMap;
 
 import com.googlecode.jsonrpc4j.JsonRpcHttpClient;
 import com.googlecode.jsonrpc4j.ProxyUtil;
@@ -38,9 +39,12 @@ public class RippleClient {
 		this("localhost", 5005);
 	}
 	
-	// TODO: this should return an object
 	public AccountData getRootAccount() {
 		return this.rippleService.account_info(new AccountInfoRequest(rootAccount)).getAccount_data();
+	}
+	
+	public LinkedHashMap<String, Object> getServerInfo() {
+		return this.rippleService.server_info();
 	}
 	
 //	public String getRootAccount() {

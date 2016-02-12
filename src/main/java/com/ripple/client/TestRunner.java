@@ -8,6 +8,7 @@ public class TestRunner {
 		RippleClient client = new RippleClient("localhost", 5105);
 		
 		System.out.println(client.getRootAccount().toString());
+		System.out.println(client.getServerInfo());
 	}
 
 }
