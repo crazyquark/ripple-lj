@@ -7,6 +7,12 @@ import com.googlecode.jsonrpc4j.JsonRpcHttpClient;
 import com.googlecode.jsonrpc4j.ProxyUtil;
 import com.ripple.client.model.AccountInfoRequest;
 
+/**
+ * The main entrypoint to use ripple via RPC
+ * 
+ * @author Cristian Sandu
+ *
+ */
 public class RippleClient {
 	public static final String rootAccount = "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh";
 	

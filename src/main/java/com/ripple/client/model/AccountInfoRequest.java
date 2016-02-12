@@ -1,19 +1,18 @@
 package com.ripple.client.model;
 
-import com.ripple.client.rpc.RippleClient;
+import lombok.Data;
 
+/**
+ * A POJO to model an account_info request
+ * 
+ * @See <a href="https://ripple.com/build/rippled-apis/#account-info">rippled docs</a>
+ * 
+ * @author Cristian Sandu 
+ *
+ */
+@Data
 public class AccountInfoRequest {
 	private String account;
-	
-	public AccountInfoRequest() {
-		this.account = RippleClient.rootAccount;
-	}
-
-	public AccountInfoRequest(String account) {
-		this.account = account;
-	}
-
-	public String getAccount() {
-		return account;
-	}
+	private Boolean strict = false;
+	private String ledger_index = "validated";
 }

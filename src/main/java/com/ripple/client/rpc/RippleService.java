@@ -3,11 +3,18 @@ package com.ripple.client.rpc;
 import java.util.LinkedHashMap;
 
 import com.ripple.client.model.AccountInfoRequest;
-import com.ripple.client.model.ExtendedAccountInfoRequest;
+import com.ripple.client.model.AccountTxRequest;
 
 // XXX: first attempt at fleshing out the Ripple RPC interface
 // XXX: Must use objects instead of strings as return types - watch out for errors
 // XXX: Handle optional params
+/**
+ * A RippleD RPC adapter interface to be used via <code>ProxyUtil</code>
+ * @see <a href="https://ripple.com/build/rippled-apis/">rippled docs</a>
+ * 
+ * @author Cristian Sandu
+ *
+ */
 public interface RippleService {
 	// Ledger
 	public String ledger_current();
@@ -21,8 +28,7 @@ public interface RippleService {
 	// Account
 	// XXX: use proper objects instead of LinkedHashMap
 	public LinkedHashMap<String, Object> account_info(AccountInfoRequest params);
-	public LinkedHashMap<String, Object>  account_info(ExtendedAccountInfoRequest params);
-	public String account_tx(String account/*, Integer ledger_index_min, Integer ledger_index_max*/);
+	public LinkedHashMap<String, Object> account_tx(AccountTxRequest params);
 	
 	// Server
 	public String server_info();
