@@ -2,6 +2,7 @@ package com.ripple.client.rpc;
 
 import java.util.LinkedHashMap;
 
+import com.ripple.client.model.AccountInfoResponse;
 import com.ripple.client.model.AccountInfoRequest;
 import com.ripple.client.model.AccountTxRequest;
 
@@ -27,7 +28,7 @@ public interface RippleService {
 	
 	// Account
 	// XXX: use proper objects instead of LinkedHashMap
-	public LinkedHashMap<String, Object> account_info(AccountInfoRequest params);
+	public AccountInfoResponse account_info(AccountInfoRequest params);
 	public LinkedHashMap<String, Object> account_tx(AccountTxRequest params);
 	
 	// Server

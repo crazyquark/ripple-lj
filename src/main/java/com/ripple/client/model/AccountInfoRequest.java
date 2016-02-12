@@ -15,4 +15,8 @@ public class AccountInfoRequest {
 	private String account;
 	private Boolean strict = false;
 	private String ledger_index = "validated";
+	
+	public AccountInfoRequest(String account) {
+		this.account = account;
+	}
 }

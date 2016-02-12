@@ -39,7 +39,7 @@ public class RippleClient {
 	
 	// TODO: this should return an object
 	public String getRootAccount() {
-		return this.rippleService.account_info(new AccountInfoRequest()).toString();
+		return this.rippleService.account_info(new AccountInfoRequest(rootAccount)).toString();
 	}
 	
 //	public String getRootAccount() {
