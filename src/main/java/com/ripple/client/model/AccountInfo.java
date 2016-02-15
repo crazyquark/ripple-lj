@@ -1,5 +1,7 @@
 package com.ripple.client.model;
 
+import java.math.BigInteger;
+
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.ripple.client.json.AccountInfoDeserializer;
 
@@ -45,5 +47,6 @@ public class AccountInfo extends AbstractInfo {
 //	private Integer ledger_index;
 //	private String status;
 //	private Boolean validated;
+	private BigInteger balance;
 	private String account;
 }

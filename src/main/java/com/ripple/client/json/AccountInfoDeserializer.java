@@ -1,6 +1,7 @@
 package com.ripple.client.json;
 
 import java.io.IOException;
+import java.math.BigInteger;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
@@ -24,9 +25,9 @@ public class AccountInfoDeserializer extends JsonDeserializer<AccountInfo> {
 
 		JsonNode accountNode = node.get("account_data");
 		if (accountNode != null) {
-			String account = accountNode.get("Account").asText();;
-			accountInfo.setAccount(account);
-
+			accountInfo.setAccount(accountNode.get("Account").asText());
+			accountInfo.setBalance(new BigInteger(accountNode.get("Balance").asText()));
+			
 			return accountInfo;
 		} else {
 			String error = tryToGetError(node);
