@@ -1,7 +1,10 @@
 package com.ripple.client.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.ripple.client.json.AccountInfoDeserializer;
+
 import lombok.Data;
-import lombok.ToString;
+import lombok.EqualsAndHashCode;
 
 /**
  * A POJO to map to an account_info request
@@ -20,24 +23,27 @@ import lombok.ToString;
  * 
  */
 @Data
-public class AccountInfo {
-	@ToString
-	public final class AccountData {
-		public String Account;
-		public String Balance;
-		public Integer Flags;
-		// XXX: can this be an enum?
-		public String LedgerEntryType;
-		public Integer OwnerCount;
-		public String PreviousTxnID;
-		public Integer PreviousTxnLgrSeq;
-		public Integer Sequence;
-		public String index;
-	}
+@EqualsAndHashCode(callSuper=false)
+@JsonDeserialize(using = AccountInfoDeserializer.class)
+public class AccountInfo extends AbstractInfo {
+//	@ToString
+//	public final class AccountData {
+//		public String Account;
+//		public String Balance;
+//		public Integer Flags;
+//		// XXX: can this be an enum?
+//		public String LedgerEntryType;
+//		public Integer OwnerCount;
+//		public String PreviousTxnID;
+//		public Integer PreviousTxnLgrSeq;
+//		public Integer Sequence;
+//		public String index;
+//	}
 	
-	private AccountData account_data;
-	private String ledger_hash;
-	private Integer ledger_index;
-	private String status;
-	private Boolean validated;
+//	private AccountData account_data;
+//	private String ledger_hash;
+//	private Integer ledger_index;
+//	private String status;
+//	private Boolean validated;
+	private String account;
 }

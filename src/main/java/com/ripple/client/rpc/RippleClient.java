@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 
 import com.googlecode.jsonrpc4j.JsonRpcHttpClient;
 import com.googlecode.jsonrpc4j.ProxyUtil;
-import com.ripple.client.model.AccountInfo.AccountData;
+import com.ripple.client.model.AccountInfo;
 import com.ripple.client.rpc.model.AccountInfoRequest;
 
 /**
@@ -39,8 +39,8 @@ public class RippleClient {
 		this("localhost", 5005);
 	}
 	
-	public AccountData getRootAccount() {
-		return this.rippleService.account_info(new AccountInfoRequest(rootAccount)).getAccount_data();
+	public AccountInfo getRootAccount() {
+		return this.rippleService.account_info(new AccountInfoRequest(rootAccount));
 	}
 	
 	public LinkedHashMap<String, Object> getServerInfo() {
