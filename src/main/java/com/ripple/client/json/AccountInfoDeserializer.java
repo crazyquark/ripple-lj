@@ -5,11 +5,10 @@ import java.math.BigInteger;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.ripple.client.model.AccountInfo;
 
-public class AccountInfoDeserializer extends JsonDeserializer<AccountInfo> {
+public class AccountInfoDeserializer extends AbstractDeserializer<AccountInfo> {
 
 	@Override
 	public AccountInfo deserialize(JsonParser jsonParser,
@@ -36,10 +35,4 @@ public class AccountInfoDeserializer extends JsonDeserializer<AccountInfo> {
 			return accountInfo;
 		}
 	}
-
-	private String tryToGetError(JsonNode jsonNode) {
-		String error = jsonNode.get("error").asText();
-		return error;
-	}
-
 }
