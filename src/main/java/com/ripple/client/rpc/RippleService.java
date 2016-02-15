@@ -2,9 +2,9 @@ package com.ripple.client.rpc;
 
 import java.util.LinkedHashMap;
 
-import com.ripple.client.model.AccountInfoResponse;
-import com.ripple.client.model.AccountInfoRequest;
-import com.ripple.client.model.AccountTxRequest;
+import com.ripple.client.model.AccountInfo;
+import com.ripple.client.rpc.model.AccountInfoRequest;
+import com.ripple.client.rpc.model.AccountTxRequest;
 
 // XXX: first attempt at fleshing out the Ripple RPC interface
 // XXX: Must use objects instead of strings as return types - watch out for errors
@@ -28,7 +28,7 @@ public interface RippleService {
 	
 	// Account
 	// XXX: use proper objects instead of LinkedHashMap
-	public AccountInfoResponse account_info(AccountInfoRequest params);
+	public AccountInfo account_info(AccountInfoRequest params);
 	public LinkedHashMap<String, Object> account_tx(AccountTxRequest params);
 	
 	// Server

@@ -1,4 +1,4 @@
-package com.ripple.client.model;
+package com.ripple.client.rpc.model;
 
 import lombok.Data;
 

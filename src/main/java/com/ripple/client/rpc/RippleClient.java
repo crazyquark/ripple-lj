@@ -6,8 +6,8 @@ import java.util.LinkedHashMap;
 
 import com.googlecode.jsonrpc4j.JsonRpcHttpClient;
 import com.googlecode.jsonrpc4j.ProxyUtil;
-import com.ripple.client.model.AccountInfoRequest;
-import com.ripple.client.model.AccountInfoResponse.AccountData;
+import com.ripple.client.model.AccountInfo.AccountData;
+import com.ripple.client.rpc.model.AccountInfoRequest;
 
 /**
  * The main entrypoint to use ripple via RPC

@@ -20,7 +20,7 @@ import lombok.ToString;
  * 
  */
 @Data
-public class AccountInfoResponse {
+public class AccountInfo {
 	@ToString
 	public final class AccountData {
 		public String Account;
