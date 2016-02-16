@@ -9,6 +9,7 @@ import com.ripple.client.rpc.model.AccountInfo;
 import com.ripple.client.rpc.model.AccountInfoRequest;
 import com.ripple.client.rpc.model.AccountTxInfo;
 import com.ripple.client.rpc.model.AccountTxRequest;
+import com.ripple.client.rpc.model.CurrentLedgerInfo;
 import com.ripple.client.rpc.model.ServerInfo;
 import com.ripple.client.rpc.model.Transaction;
 import com.ripple.client.rpc.model.TxAddress;
@@ -41,6 +42,10 @@ public class RippleClient {
 
 	public RippleClient() {
 		this("localhost", 5005);
+	}
+	
+	public CurrentLedgerInfo getCurrentLedger() {
+		return this.rippleService.ledger_current();
 	}
 	
 	public AccountInfo getAccountInfo(String account) {

@@ -1,9 +1,12 @@
 package com.ripple.client.rpc;
 
+import java.util.LinkedHashMap;
+
 import com.ripple.client.rpc.model.AccountInfo;
 import com.ripple.client.rpc.model.AccountInfoRequest;
 import com.ripple.client.rpc.model.AccountTxInfo;
 import com.ripple.client.rpc.model.AccountTxRequest;
+import com.ripple.client.rpc.model.CurrentLedgerInfo;
 import com.ripple.client.rpc.model.ServerInfo;
 import com.ripple.client.rpc.model.SignTxRequest;
 import com.ripple.client.rpc.model.SubmitTxRequest;
@@ -22,16 +25,16 @@ import com.ripple.client.rpc.model.TxAddress;
  */
 public interface RippleService {
 	// Ledger
-	public String ledger_current();
+	public CurrentLedgerInfo ledger_current();
 	
-	// Transactions 
+	// Transactions
+	// TODO: add proper response POJOs
 	public Transaction tx(TxAddress params);
-	public String sign(AccountTxRequest params);
-	public String submit(SubmitTxRequest params);
-	public String submit(SignTxRequest params);
+	public LinkedHashMap<String, Object> sign(AccountTxRequest params);
+	public LinkedHashMap<String, Object> submit(SubmitTxRequest params);
+	public LinkedHashMap<String, Object> submit(SignTxRequest params);
 	
 	// Account
-	// XXX: use proper objects instead of LinkedHashMap
 	public AccountInfo account_info(AccountInfoRequest params);
 	public AccountTxInfo account_tx(AccountTxRequest params);
 	
