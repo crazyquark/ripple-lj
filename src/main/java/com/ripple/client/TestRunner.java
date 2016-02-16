@@ -9,6 +9,7 @@ public class TestRunner {
 		
 		System.out.println(client.getRootAccountInfo().toString());
 		System.out.println(client.getServerInfo());
+		System.out.println(client.getRootAccountTxs());
 	}
 
 }

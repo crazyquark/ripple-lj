@@ -13,7 +13,7 @@ import lombok.Data;
  */
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AccontTxInfo {
+public class AccountTxInfo {
 	@Data
 	@JsonIgnoreProperties(ignoreUnknown = true)
 	public class TxInfo {

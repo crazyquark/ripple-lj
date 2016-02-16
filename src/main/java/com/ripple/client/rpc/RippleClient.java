@@ -7,6 +7,7 @@ import com.googlecode.jsonrpc4j.JsonRpcHttpClient;
 import com.googlecode.jsonrpc4j.ProxyUtil;
 import com.ripple.client.rpc.model.AccountInfo;
 import com.ripple.client.rpc.model.AccountInfoRequest;
+import com.ripple.client.rpc.model.AccountTxInfo;
 import com.ripple.client.rpc.model.ServerInfo;
 
 /**
@@ -49,5 +50,10 @@ public class RippleClient {
 	
 	public ServerInfo getServerInfo() {
 		return this.rippleService.server_info();
+	}
+
+	public AccountTxInfo getRootAccountTxs() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
