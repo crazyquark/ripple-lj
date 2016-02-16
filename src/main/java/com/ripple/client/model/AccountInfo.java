@@ -1,11 +1,12 @@
 package com.ripple.client.model;
 
+import java.math.BigInteger;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.ToString;
 
 /**
  * A POJO to map to an account_info request
@@ -31,19 +32,20 @@ public class AccountInfo {
 	@JsonIgnoreProperties(ignoreUnknown = true)
 	public final class AccountData {
 		public String Account;
-//		public String Balance;
-//		public Integer Flags;
+		public BigInteger Balance;
+		public Integer Flags;
 //		// XXX: can this be an enum?
 		public String LedgerEntryType;
 		public Integer OwnerCount;
 		public String PreviousTxnID;
 		public Integer PreviousTxnLgrSeq;
-//		public Integer Sequence;
-//		public String index;
+		public Integer Sequence;
+		public String index;
 	}
 	
 	@JsonProperty("account_data")
 	private AccountData accountData;
+	
 	private String ledger_hash;
 	private Integer ledger_index;
 	private String status;
