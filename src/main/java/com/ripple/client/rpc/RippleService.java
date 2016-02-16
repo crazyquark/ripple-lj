@@ -41,4 +41,6 @@ public interface RippleService {
 	
 	// Server
 	public ServerInfo server_info();
+	// public PeersInfo peers();
+	// public ConsensusInfo consensus_info();
 }
