@@ -54,6 +54,10 @@ public class RippleClient {
 	}
 
 	public AccountTxInfo getRootAccountTxs() {
-		return this.rippleService.account_tx(new AccountTxRequest(rootAccount));
+		return this.getAccountTxs(rootAccount);
+	}
+	
+	public AccountTxInfo getAccountTxs(String account) {
+		return this.rippleService.account_tx(new AccountTxRequest(account));
 	}
 }
