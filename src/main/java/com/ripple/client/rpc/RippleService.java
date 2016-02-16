@@ -9,7 +9,9 @@ import com.ripple.client.rpc.model.AccountTxRequest;
 import com.ripple.client.rpc.model.CurrentLedgerInfo;
 import com.ripple.client.rpc.model.ServerInfo;
 import com.ripple.client.rpc.model.SignTxRequest;
+import com.ripple.client.rpc.model.SignTxResponse;
 import com.ripple.client.rpc.model.SubmitTxRequest;
+import com.ripple.client.rpc.model.SubmitTxResponse;
 import com.ripple.client.rpc.model.Transaction;
 import com.ripple.client.rpc.model.TxAddress;
 
@@ -28,15 +30,14 @@ public interface RippleService {
 	public CurrentLedgerInfo ledger_current();
 	
 	// Transactions
-	// TODO: add proper response POJOs
-	public Transaction tx(TxAddress params);
-	public LinkedHashMap<String, Object> sign(AccountTxRequest params);
-	public LinkedHashMap<String, Object> submit(SubmitTxRequest params);
-	public LinkedHashMap<String, Object> submit(SignTxRequest params);
+	public Transaction tx(TxAddress txAddress);
+	public SignTxResponse sign(AccountTxRequest tx);
+	public SubmitTxResponse submit(SubmitTxRequest tx);
+	public SubmitTxResponse submit(SignTxRequest tx);
 	
 	// Account
-	public AccountInfo account_info(AccountInfoRequest params);
-	public AccountTxInfo account_tx(AccountTxRequest params);
+	public AccountInfo account_info(AccountInfoRequest account);
+	public AccountTxInfo account_tx(AccountTxRequest account);
 	
 	// Server
 	public ServerInfo server_info();

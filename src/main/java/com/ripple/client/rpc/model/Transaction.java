@@ -46,4 +46,6 @@ public class Transaction {
 	
 	@JsonProperty("TxnSignature")
 	private String signature;
+	
+	private String hash;
 }
