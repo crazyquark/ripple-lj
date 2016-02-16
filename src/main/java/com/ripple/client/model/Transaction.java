@@ -1,5 +1,7 @@
 package com.ripple.client.model;
 
+import java.math.BigInteger;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -21,8 +23,12 @@ public class Transaction {
 	@JsonProperty("Flags")
 	private Integer flags;
 	
+	// XXX: if this is null will it be automatically added by RippleD?
 	@JsonProperty("Sequence")
 	private Integer sequence;
+	
+	@JsonProperty("Fee")
+	private BigInteger fee;
 	
 	@JsonProperty("SigningPubKey")
 	private String signingPubKey;

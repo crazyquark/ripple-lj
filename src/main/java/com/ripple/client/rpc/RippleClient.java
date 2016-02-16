@@ -2,11 +2,11 @@ package com.ripple.client.rpc;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.LinkedHashMap;
 
 import com.googlecode.jsonrpc4j.JsonRpcHttpClient;
 import com.googlecode.jsonrpc4j.ProxyUtil;
 import com.ripple.client.model.AccountInfo;
+import com.ripple.client.model.ServerInfo;
 import com.ripple.client.rpc.model.AccountInfoRequest;
 
 /**
@@ -43,7 +43,7 @@ public class RippleClient {
 		return this.rippleService.account_info(new AccountInfoRequest(rootAccount));
 	}
 	
-	public LinkedHashMap<String, Object> getServerInfo() {
+	public ServerInfo getServerInfo() {
 		return this.rippleService.server_info();
 	}
 	
