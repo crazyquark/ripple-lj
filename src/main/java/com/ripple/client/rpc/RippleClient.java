@@ -11,6 +11,7 @@ import com.ripple.client.rpc.model.AccountTxInfo;
 import com.ripple.client.rpc.model.AccountTxRequest;
 import com.ripple.client.rpc.model.ServerInfo;
 import com.ripple.client.rpc.model.Transaction;
+import com.ripple.client.rpc.model.TxAddress;
 
 /**
  * The main entrypoint to use ripple via RPC
@@ -62,7 +63,7 @@ public class RippleClient {
 		return this.rippleService.account_tx(new AccountTxRequest(account));
 	}
 	
-	public Transaction getTransactionInfo(String transaction) {
+	public Transaction getTransactionInfo(TxAddress transaction) {
 		return this.rippleService.tx(transaction);
 	}
 }
