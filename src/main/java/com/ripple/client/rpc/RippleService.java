@@ -5,7 +5,10 @@ import com.ripple.client.rpc.model.AccountInfoRequest;
 import com.ripple.client.rpc.model.AccountTxInfo;
 import com.ripple.client.rpc.model.AccountTxRequest;
 import com.ripple.client.rpc.model.ServerInfo;
+import com.ripple.client.rpc.model.SignTxRequest;
+import com.ripple.client.rpc.model.SubmitTxRequest;
 import com.ripple.client.rpc.model.Transaction;
+import com.ripple.client.rpc.model.TxAddress;
 
 // XXX: first attempt at fleshing out the Ripple RPC interface
 // XXX: Must use objects instead of strings as return types - watch out for errors
@@ -22,10 +25,10 @@ public interface RippleService {
 	public String ledger_current();
 	
 	// Transactions 
-	public Transaction tx(String transaction/*, Boolean binary*/);
-	public String sign(Transaction tx_json, String secret, Boolean offline/*, Boolean build_path, Integer fee_mult_max*/);
-	public String submit(String tx_blob, Boolean fail_hard);
-	public String submit(Transaction tx_json, String secret/*, Boolean fail_hard, Boolean offline, Boolean build_path, Integer fee_mult_max*/);
+	public Transaction tx(TxAddress params);
+	public String sign(AccountTxRequest params);
+	public String submit(SubmitTxRequest params);
+	public String submit(SignTxRequest params);
 	
 	// Account
 	// XXX: use proper objects instead of LinkedHashMap
