@@ -3,6 +3,7 @@ package com.ripple.client.rpc;
 import java.util.LinkedHashMap;
 
 import com.ripple.client.model.AccountInfo;
+import com.ripple.client.model.Transaction;
 import com.ripple.client.rpc.model.AccountInfoRequest;
 import com.ripple.client.rpc.model.AccountTxRequest;
 
@@ -22,7 +23,7 @@ public interface RippleService {
 	
 	// Transactions
 	public String tx(String transaction, Boolean binary);
-	public String sign(Object/*Transaction*/ tx_json, String secret, Boolean offline/*, Boolean build_path, Integer fee_mult_max*/);
+	public String sign(Transaction tx_json, String secret, Boolean offline/*, Boolean build_path, Integer fee_mult_max*/);
 	public String submit(String tx_blob, Boolean fail_hard);
 	public String submit(Object/*Transaction*/ tx_json, String secret/*, Boolean fail_hard, Boolean offline, Boolean build_path, Integer fee_mult_max*/);
 	
