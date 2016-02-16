@@ -8,6 +8,7 @@ import com.googlecode.jsonrpc4j.ProxyUtil;
 import com.ripple.client.rpc.model.AccountInfo;
 import com.ripple.client.rpc.model.AccountInfoRequest;
 import com.ripple.client.rpc.model.AccountTxInfo;
+import com.ripple.client.rpc.model.AccountTxRequest;
 import com.ripple.client.rpc.model.ServerInfo;
 
 /**
@@ -40,8 +41,8 @@ public class RippleClient {
 		this("localhost", 5005);
 	}
 	
-	public AccountInfo getAccountInfo(String rippleAddress) {
-		return this.rippleService.account_info(new AccountInfoRequest(rippleAddress));
+	public AccountInfo getAccountInfo(String account) {
+		return this.rippleService.account_info(new AccountInfoRequest(account));
 	}
 	
 	public AccountInfo getRootAccountInfo() {
@@ -53,7 +54,6 @@ public class RippleClient {
 	}
 
 	public AccountTxInfo getRootAccountTxs() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.rippleService.account_tx(new AccountTxRequest(rootAccount));
 	}
 }

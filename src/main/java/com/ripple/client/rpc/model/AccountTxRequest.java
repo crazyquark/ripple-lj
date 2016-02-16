@@ -24,4 +24,8 @@ public class AccountTxRequest {
 	
 	private Boolean binary = false;
 	private Boolean forward = false;
+	
+	public AccountTxRequest(String account) {
+		this.account = account;
+	}
 }
