@@ -1,4 +1,4 @@
-package com.ripple.client.model;
+package com.ripple.client.rpc.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

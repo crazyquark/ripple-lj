@@ -1,5 +1,7 @@
 package com.ripple.client.rpc.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Data;
 
 /**
@@ -12,9 +14,14 @@ import lombok.Data;
  */
 @Data
 public class AccountTxRequest {
-	String account;
-	Integer ledger_index_min = -1;
-	Integer ledger_index_max = -1;
-	Boolean binary = false;
-	Boolean forward = false;
+	private String account;
+	
+	@JsonProperty("ledger_index_min")
+	private Integer minLedgerIndex = -1;
+	
+	@JsonProperty("ledger_index_max")
+	private Integer maxLedgerMax = -1;
+	
+	private Boolean binary = false;
+	private Boolean forward = false;
 }
