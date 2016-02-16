@@ -20,8 +20,19 @@ public class Transaction {
 	@JsonProperty("Account")
 	private String senderAccount;
 	
+	@JsonProperty("Destination")
+	private String destinationAccount;
+	
 	@JsonProperty("Flags")
 	private Integer flags;
+	
+	// TODO: this is tricky since it can be both a number and an object(for non-XRP)
+	/**
+	 * Amount object or integer?
+	 * @see <a href="https://ripple.com/build/rippled-apis/#specifying-currency-amounts">ripple amount objects</a>
+	 */
+	@JsonProperty("Amount")
+	private String amount;
 	
 	// XXX: if this is null will it be automatically added by RippleD?
 	@JsonProperty("Sequence")

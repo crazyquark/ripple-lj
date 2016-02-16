@@ -2,6 +2,8 @@ package com.ripple.client.rpc.model;
 
 import java.math.BigInteger;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -27,6 +29,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper=false)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonAutoDetect(fieldVisibility=Visibility.ANY)
 public class AccountInfo {
 	@Data
 	@JsonIgnoreProperties(ignoreUnknown = true)
@@ -56,7 +59,6 @@ public class AccountInfo {
 		@JsonProperty("Sequence")
 		private Integer sequence;
 		
-		@JsonProperty("index")
 		private String index;
 	}
 	
