@@ -32,23 +32,23 @@ public class ServerInfo {
 	@JsonIgnoreProperties(ignoreUnknown = true)
 	public class LocalNodeInfo {
 		@JsonProperty("build_version")
-		public String buildVersion;
+		private String buildVersion;
 
 		@JsonProperty("complete_ledgers")
-		public String completeLedgers;
+		private String completeLedgers;
 		
 		@JsonProperty("pubkey_node")
-		public String nodePubKey;
+		private String nodePubKey;
 		
 		@JsonProperty("pubkey_validator")
-		public String validatorPubKey;
+		private String validatorPubKey;
 		
 		// TODO: make this an enum
 		@JsonProperty("server_state")
-		public String serverState;
+		private String serverState;
 		
 		@JsonProperty("validation_quorum")
-		public Integer quorum;
+		private Integer quorum;
 	}
 	
 	public LocalNodeInfo info;

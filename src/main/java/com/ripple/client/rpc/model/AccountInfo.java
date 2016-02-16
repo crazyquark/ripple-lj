@@ -31,16 +31,33 @@ public class AccountInfo {
 	@Data
 	@JsonIgnoreProperties(ignoreUnknown = true)
 	public final class AccountData {
-		public String Account;
-		public BigInteger Balance;
-		public Integer Flags;
+		@JsonProperty("Account")
+		private String account;
+		
+		@JsonProperty("Balance")
+		private BigInteger balance;
+		
+		@JsonProperty("Flags")
+		public Integer flags;
+		
 //		// XXX: can this be an enum?
-		public String LedgerEntryType;
-		public Integer OwnerCount;
-		public String PreviousTxnID;
-		public Integer PreviousTxnLgrSeq;
-		public Integer Sequence;
-		public String index;
+		@JsonProperty("LedgerEntryType")
+		private String ledgerEntryType;
+		
+		@JsonProperty("OwnerCount")
+		private Integer ownerCount;
+		
+		@JsonProperty("PreviousTxnID")
+		private String previousTxnID;
+		
+		@JsonProperty("PreviousTxnLgrSeq")
+		private Integer previousTxnLgrSeq;
+		
+		@JsonProperty("Sequence")
+		private Integer sequence;
+		
+		@JsonProperty("index")
+		private String index;
 	}
 	
 	@JsonProperty("account_data")
