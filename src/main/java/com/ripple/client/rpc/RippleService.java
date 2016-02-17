@@ -1,7 +1,5 @@
 package com.ripple.client.rpc;
 
-import java.util.LinkedHashMap;
-
 import com.ripple.client.rpc.model.AccountInfo;
 import com.ripple.client.rpc.model.AccountInfoRequest;
 import com.ripple.client.rpc.model.AccountTxInfo;
