@@ -6,6 +6,14 @@ import java.net.URL;
 import com.googlecode.jsonrpc4j.JsonRpcHttpClient;
 import com.googlecode.jsonrpc4j.ProxyUtil;
 import com.ripple.client.rpc.RippleService;
+import com.ripple.client.rpc.model.AccountInfo;
+import com.ripple.client.rpc.model.AccountInfoRequest;
+import com.ripple.client.rpc.model.AccountTxInfo;
+import com.ripple.client.rpc.model.AccountTxRequest;
+import com.ripple.client.rpc.model.CurrentLedgerInfo;
+import com.ripple.client.rpc.model.ServerInfo;
+import com.ripple.client.rpc.model.Transaction;
+import com.ripple.client.rpc.model.TxAddress;
 
 /**
  * A base for Ripple clients that wraps a RPC client
@@ -42,5 +50,33 @@ public class BaseRippleClient {
 	
 	public RippleService getRippleServiceProxy() {
 		return this.rippleServiceProxy;
+	}
+	
+	public CurrentLedgerInfo getCurrentLedger() {
+		return this.rippleServiceProxy.ledger_current();
+	}
+	
+	public AccountInfo getAccountInfo(String account) {
+		return this.rippleServiceProxy.account_info(new AccountInfoRequest(account));
+	}
+	
+	public AccountInfo getRootAccountInfo() {
+		return this.getAccountInfo(rootAccount);
+	}
+	
+	public ServerInfo getServerInfo() {
+		return this.rippleServiceProxy.server_info();
+	}
+
+	public AccountTxInfo getRootAccountTxs() {
+		return this.getAccountTxs(rootAccount);
+	}
+	
+	public AccountTxInfo getAccountTxs(String account) {
+		return this.rippleServiceProxy.account_tx(new AccountTxRequest(account));
+	}
+	
+	public Transaction getTransactionInfo(TxAddress transaction) {
+		return this.rippleServiceProxy.tx(transaction);
 	}
 }
